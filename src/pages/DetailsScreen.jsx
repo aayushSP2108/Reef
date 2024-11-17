@@ -8,7 +8,7 @@ import { colors } from '../styles/colors';
 import { FaRegEye } from 'react-icons/fa';
 import Footer from '../component/Footer';
 import { GlobalStateContext } from '../../Context/GlobalStateContext';
-import { API_BASE_URL } from '../../Constants/Constants';
+import { API_BASE_URL, GETMODEL_ENDPOINT } from '../../Constants/Constants';
 
 export default function DetailsScreen() {
     const { index } = useParams();
@@ -43,7 +43,7 @@ export default function DetailsScreen() {
         console.log('modelIndex', modelIndex); // For debugging, log the index
 
         // Send a POST request to the backend
-        fetch(`${API_BASE_URL}:5001/getmodel`, {  // Backend URL
+        fetch(`${API_BASE_URL}:${GETMODEL_ENDPOINT}`, {  // Backend URL
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

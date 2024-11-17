@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { GlobalStateContext } from '../../Context/GlobalStateContext';
 import ModelList from './ModelList';
+import { API_BASE_URL, GETUSERMODELS_ENDPOINT } from '../../Constants/Constants';
 
 export default function YourModels() {
     const { userData, isLogin } = useContext(GlobalStateContext);
@@ -21,7 +22,7 @@ export default function YourModels() {
         }
         setLoading(true);
         try {
-            const response = await fetch('http://localhost:5001/getusermodels', {
+            const response = await fetch(`${API_BASE_URL}:${GETUSERMODELS_ENDPOINT}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

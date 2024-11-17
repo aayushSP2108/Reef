@@ -5,6 +5,10 @@ export const USERSDATA_ENDPOINT = '5001/userdata';
 
 export const ADDMODEL_ENDPOINT = '5001/addmodel';
 export const MODELDATA_ENDPOINT = '5001/addmodel';
+export const GETMODEL_ENDPOINT = '5001/getmodel';
+export const GETALLMODELS_ENDPOINT = '5001/getallmodels';
+export const GETUSERMODELS_ENDPOINT = '5001/getusermodels';
+
 // export const USERSDATA_ENDPOINT = '5001/userdata';
 // export const ADDOUTLET_ENDPOINT = '/addoutlet';
 // export const ADDMENU_ENDPOINT = '/addmenu';

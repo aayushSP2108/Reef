@@ -109,6 +109,7 @@ import Model from '../component/Model';
 import ModelList from '../component/ModelList';
 import MapComponent from '../component/MapComponent';
 import { GlobalStateContext } from '../../Context/GlobalStateContext';
+import { API_BASE_URL, GETALLMODELS_ENDPOINT } from '../../Constants/Constants';
 
 export default function Models() {
   const { userData, isLogin } = useContext(GlobalStateContext); // Assuming user context is used here
@@ -131,7 +132,8 @@ export default function Models() {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetch('http://localhost:5001/getallmodels', {
+      
+      const response = await fetch(`${API_BASE_URL}:${GETALLMODELS_ENDPOINT}`, {
         headers: {
           'Authorization': `Bearer ${token}` // Make sure to send token if needed
         }
