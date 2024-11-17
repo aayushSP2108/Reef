@@ -1,0 +1,415 @@
+{
+    "StoredModels": [
+        {
+            "index": 0,
+            "image": "https://spicetreemunnar.com/wp-content/uploads/2022/09/The-Western-Ghats-A-UNESCO-World-Heritage-Site.jpg",
+            "title": "Western Ghats Biodiversity",
+            "year": 2023,
+            "address": "Western Ghats, Maharashtra, India",
+            "coordinates": {
+                "latitude": 15.5544,
+                "longitude": 73.1984
+            },
+            "description": "This model highlights the rich biodiversity of the Western Ghats, showcasing its unique flora and fauna.",
+            "largeDescription": "The Western Ghats, recognized as a UNESCO World Heritage site, is one of the eight 'hottest hotspots' of biological diversity in the world. This model offers a comprehensive look into the diverse ecosystems, from tropical rainforests to montane grasslands, and their rich array of species, including numerous endemic plants and animals. It also discusses ongoing conservation efforts aimed at preserving this vital region, which plays a crucial role in regulating the climate and supporting livelihoods for millions of people.",
+            "info": {
+                "state": "Maharashtra",
+                "release": "September 29, 2024",
+                "geologicalAge": "Paleogene",
+                "clasticSedimentology": [
+                    "Fluvial / Alluvial",
+                    "Shallow",
+                    "Marine / Paralic"
+                ],
+                "carbonateAndEvaporiteSedimentology": [
+                    "Marine",
+                    "Reef"
+                ],
+                "metamorphic": [
+                    "Gneiss",
+                    "Quartzite"
+                ],
+                "author": "Nature Conservation Team",
+                "license": "CC BY-NC",
+                "tags": [
+                    "biodiversity",
+                    "Western Ghats",
+                    "ecosystem"
+                ],
+                "size": "Medium (200-2000m)",
+                "smallestVisibleFeature": "5-20 cm"
+            },
+            "contributors": [
+                "Dr. Anil Gupta",
+                "Ms. Kavita Sen",
+                "Mr. Rajesh Kumar"
+            ],
+            "citation": "Gupta, A., Sen, K., & Kumar, R. (2023). Biodiversity of the Western Ghats. Journal of Ecology Studies.",
+            "sharing": {
+                "via_link": true,
+                "embed_3d_viewer": true
+            }
+        },
+        {
+            "index": 1,
+            "image": "https://sustainability.stanford.edu/sites/sustainability/files/styles/card_1900x950/public/media/image/tibetuplift_himalayas_raimond-klavins-l6jxljmeuoo-unsplash_0.jpeg?h=56d0ca2e&itok=9Ej2p45Q",
+            "title": "Himalayan Glacial Landscape",
+            "year": 2023,
+            "coordinates": {
+                "latitude": 32.0654,
+                "longitude": 77.1198
+            },
+            "description": "A model of the stunning glacial landscapes of the Himalayas, illustrating their significance in climate regulation.",
+            "largeDescription": "The Himalayan range is home to some of the largest glaciers outside of the polar regions, which play a crucial role in the hydrology of South Asia. This model delves into the processes of glacier formation, movement, and melting, illustrating the impact of climate change on these majestic ice bodies. It emphasizes the importance of glaciers in maintaining river systems, supporting biodiversity, and influencing weather patterns in the region. Furthermore, it discusses the cultural significance of these landscapes for local communities who depend on glacial meltwater for agriculture and daily life.",
+            "info": {
+                "state": "Himachal Pradesh",
+                "release": "October 15, 2024",
+                "geologicalAge": "Pleistocene",
+                "clasticSedimentology": [
+                    "Glacial",
+                    "Fluvial / Alluvial"
+                ],
+                "author": "Glacier Research Institute",
+                "license": "CC BY-NC",
+                "tags": [
+                    "glacier",
+                    "Himalayas",
+                    "climate"
+                ],
+                "size": "Medium (200-2000m)",
+                "smallestVisibleFeature": "5-20 cm"
+            },
+            "contributors": [
+                "Dr. Meera Joshi",
+                "Mr. Ankit Sharma",
+                "Dr. Priya Choudhury"
+            ],
+            "citation": "Joshi, M., Sharma, A., & Choudhury, P. (2023). Glacial Dynamics of the Himalayas. Journal of Climate Research.",
+            "sharing": {
+                "via_link": true,
+                "embed_3d_viewer": true
+            }
+        },
+        {
+            "index": 2,
+            "image": "https://bhagyashritravels.com/wp-content/uploads/2019/10/White-Rann-of-Kutch-Feature.jpg",
+            "title": "Great Rann of Kutch",
+            "year": 2023,
+            "coordinates": {
+                "latitude": 23.8850,
+                "longitude": 68.1575
+            },
+            "description": "This model showcases the unique salt flats of the Great Rann of Kutch, emphasizing its ecological and geological features.",
+            "largeDescription": "The Great Rann of Kutch is one of the largest salt deserts in the world, characterized by its vast white expanses and extreme climate. This model provides an in-depth analysis of the geology of the region, including the processes that led to the formation of salt flats. It also highlights the unique adaptations of flora and fauna that thrive in this harsh environment, including various migratory bird species. Additionally, it covers the cultural significance of the Rann for local communities, including traditional practices and livelihoods based on salt harvesting and tourism.",
+            "info": {
+                "state": "Gujarat",
+                "release": "November 5, 2024",
+                "geologicalAge": "Quaternary",
+                "carbonateAndEvaporiteSedimentology": [
+                    "Evaporite Playa",
+                    "Marine"
+                ],
+                "metamorphic": [
+                    "Marble",
+                    "Slate"
+                ],
+                "author": "Desert Ecosystems Group",
+                "license": "CC BY-NC",
+                "tags": [
+                    "salt flat",
+                    "desert",
+                    "ecosystem"
+                ],
+                "size": "Medium (200-2000m)",
+                "smallestVisibleFeature": "5-20 cm"
+            },
+            "contributors": [
+                "Dr. Ravi Patil",
+                "Ms. Anjali Verma",
+                "Mr. Suresh Mehta"
+            ],
+            "citation": "Patil, R., Verma, A., & Mehta, S. (2023). Salt Flats of the Great Rann: An Ecological Study. Journal of Environmental Research.",
+            "sharing": {
+                "via_link": true,
+                "embed_3d_viewer": true
+            }
+        },
+        {
+            "index": 3,
+            "image": "https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2020/10/ganges_delta/22274206-2-eng-GB/Ganges_Delta_pillars.jpg",
+            "title": "Ganga River Delta",
+            "year": 2023,
+            "coordinates": {
+                "latitude": 22.3050,
+                "longitude": 88.4082
+            },
+            "description": "A model depicting the Ganga River Delta, highlighting its rich alluvial deposits and ecological diversity.",
+            "largeDescription": "The Ganga River Delta, also known as the Sundarbans Delta, is the largest delta in the world, formed by the confluence of the Ganga, Brahmaputra, and Meghna rivers. This model explores the intricate network of waterways, islands, and wetlands that characterize the delta. It emphasizes the significance of the delta's fertile alluvial soil, which supports extensive agriculture, as well as its diverse ecosystems that provide habitat for numerous species, including the Bengal tiger. The model also addresses the environmental challenges faced by the delta due to climate change, pollution, and habitat loss.",
+            "info": {
+                "state": "West Bengal",
+                "release": "December 10, 2024",
+                "geologicalAge": "Holocene",
+                "clasticSedimentology": [
+                    "Fluvial / Alluvial"
+                ],
+                "author": "River Systems Research",
+                "license": "CC BY-NC",
+                "tags": [
+                    "delta",
+                    "river",
+                    "ecosystem"
+                ],
+                "size": "Medium (200-2000m)",
+                "smallestVisibleFeature": "5-20 cm"
+            },
+            "contributors": [
+                "Dr. Neelam Sharma",
+                "Mr. Vikram Singh",
+                "Ms. Pooja Roy"
+            ],
+            "citation": "Sharma, N., Singh, V., & Roy, P. (2023). Ecological Dynamics of the Ganga River Delta. Journal of River Studies.",
+            "sharing": {
+                "via_link": true,
+                "embed_3d_viewer": true
+            }
+        },
+        {
+            "index": 4,
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Thar_desert_Rajasthan_India.jpg/544px-Thar_desert_Rajasthan_India.jpg",
+            "title": "Thar Desert Ecosystem",
+            "year": 2023,
+            "coordinates": {
+                "latitude": 27.0238,
+                "longitude": 70.5950
+            },
+            "description": "This model represents the unique ecosystems of the Thar Desert, emphasizing its resilience and biodiversity.",
+            "largeDescription": "The Thar Desert, also known as the Great Indian Desert, is characterized by its arid landscape, sand dunes, and limited water resources. This model explores the adaptations of flora and fauna to the harsh desert conditions, including the survival strategies of native species such as the desert fox and various cactus plants. It also discusses the cultural practices of local communities that have thrived in this challenging environment for centuries. The model underscores the importance of conserving desert ecosystems in the face of climate change and human encroachment.",
+            "info": {
+                "state": "Rajasthan",
+                "release": "January 15, 2025",
+                "geologicalAge": "Quaternary",
+                "clasticSedimentology": [
+                    "Aeolian",
+                    "Fluvial"
+                ],
+                "author": "Desert Studies Group",
+                "license": "CC BY-NC",
+                "tags": [
+                    "desert",
+                    "ecosystem",
+                    "biodiversity"
+                ],
+                "size": "Medium (200-2000m)",
+                "smallestVisibleFeature": "5-20 cm"
+            },
+            "contributors": [
+                "Dr. Amit Joshi",
+                "Ms. Priyanka Mehta",
+                "Mr. Rajiv Gupta"
+            ],
+            "citation": "Joshi, A., Mehta, P., & Gupta, R. (2023). Biodiversity in the Thar Desert: A Study of Resilience. Journal of Desert Ecology.",
+            "sharing": {
+                "via_link": true,
+                "embed_3d_viewer": true
+            }
+        },
+        {
+            "index": 5,
+            "image": "https://media-cdn.tripadvisor.com/media/photo-s/10/98/6e/62/mesmerising-mahabaleshwar.jpg",
+            "title": "Sahyadri Mountain Range",
+            "year": 2023,
+            "coordinates": {
+                "latitude": 15.9535,
+                "longitude": 73.4759
+            },
+            "description": "A model of the Sahyadri Mountain Range, illustrating its geological features and ecological importance.",
+            "largeDescription": "The Sahyadri Mountain Range, part of the Western Ghats, is renowned for its stunning biodiversity and significant geological features. This model explores the geological history of the Sahyadris, highlighting the volcanic activity that shaped the region and the resulting unique rock formations. It also delves into the ecological significance of the mountains, including their role as a watershed for several major rivers and their habitat for numerous endemic species. Additionally, the model addresses conservation efforts aimed at preserving this rich biodiversity amidst threats from urbanization and climate change.",
+            "info": {
+                "state": "Maharashtra",
+                "release": "February 20, 2025",
+                "geologicalAge": "Cretaceous",
+                "intrusiveIgneous": [
+                    "Dyke",
+                    "Sill"
+                ],
+                "extrusiveIgneous": [
+                    "Pyroclastic Flow Deposit",
+                    "Lava Flow Deposit"
+                ],
+                "author": "Geological Survey of India",
+                "license": "CC BY-NC",
+                "tags": [
+                    "mountains",
+                    "volcano",
+                    "geology"
+                ],
+                "size": "Medium (200-2000m)",
+                "smallestVisibleFeature": "5-20 cm"
+            },
+            "sharing": {
+                "via_link": true,
+                "embed_3d_viewer": true
+            }
+        },
+        {
+            "index": 6,
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Western-Ghats-Matheran.jpg/220px-Western-Ghats-Matheran.jpg",
+            "title": "Deccan Plateau Geological Model",
+            "year": 2023,
+            "coordinates": {
+                "latitude": 19.6952,
+                "longitude": 75.1240
+            },
+            "contributors": [],
+            "citation": "",
+            "description": "This model provides insights into the geological significance of the Deccan Plateau.",
+            "largeDescription": "The Deccan Plateau, one of the largest plateaus in the world, offers a fascinating glimpse into Earth's geological history, particularly the effects of volcanic activity. This model delves into the plateau's formation through extensive volcanic eruptions during the Late Cretaceous period, which created vast basaltic rock formations. It also examines the plateau's diverse ecosystems, which support a wide variety of flora and fauna. Additionally, the model discusses the socio-economic importance of the Deccan Plateau, including its role in agriculture and its rich mineral resources, as well as ongoing challenges related to land degradation and urbanization.",
+            "info": {
+                "state": "Maharashtra",
+                "release": "March 10, 2025",
+                "geologicalAge": "Cretaceous",
+                "intrusiveIgneous": [
+                    "Dyke",
+                    "Sill"
+                ],
+                "extrusiveIgneous": [
+                    "Pyroclastic Flow Deposit",
+                    "Lava Flow Deposit"
+                ],
+                "author": "Geological Survey of India",
+                "license": "CC BY-NC",
+                "tags": [
+                    "plateau",
+                    "volcano",
+                    "geology"
+                ],
+                "size": "Medium (200-2000m)",
+                "smallestVisibleFeature": "5-20 cm"
+            },
+            "sharing": {
+                "via_link": true,
+                "embed_3d_viewer": true
+            }
+        },
+        {
+            "index": 7,
+            "image": "https://www.shutterstock.com/image-photo/tropical-reef-seascape-hard-corals-260nw-755481211.jpg",
+            "title": "Andaman Islands Coral Reefs",
+            "year": 2023,
+            "coordinates": {
+                "latitude": 11.6230,
+                "longitude": 92.7265
+            },
+            "description": "A model of the vibrant coral reefs of the Andaman Islands, showcasing their ecological importance.",
+            "largeDescription": "The coral reefs of the Andaman Islands are among the most diverse marine ecosystems, providing critical habitat for a plethora of marine life. This model examines the intricate structures of coral reefs, their ecological roles in supporting biodiversity, and their vulnerability to climate change and human activities. It highlights the symbiotic relationships between corals and algae, the importance of these reefs in coastal protection, and their socio-economic significance for local communities reliant on fishing and tourism. Additionally, it discusses ongoing conservation efforts to protect these fragile ecosystems from degradation.",
+            "info": {
+                "state": "Andaman and Nicobar Islands",
+                "release": "April 15, 2025",
+                "geologicalAge": "Holocene",
+                "author": "Marine Biodiversity Institute",
+                "license": "CC BY-NC",
+                "tags": [
+                    "coral reef",
+                    "marine",
+                    "biodiversity"
+                ],
+                "size": "Medium (200-2000m)",
+                "smallestVisibleFeature": "5-20 cm"
+            },
+            "sharing": {
+                "via_link": true,
+                "embed_3d_viewer": true
+            }
+        },
+        {
+            "index": 8,
+            "image": "https://www.kuoni.co.uk/alfredand/wp-content/uploads/2022/03/iStock-664947348-1024x685.jpg",
+            "title": "Kumarakom Wetlands",
+            "year": 2023,
+            "coordinates": {
+                "latitude": 9.6200,
+                "longitude": 76.4242
+            },
+            "description": "This model represents the rich biodiversity of the Kumarakom Wetlands, emphasizing its ecological significance.",
+            "largeDescription": "The Kumarakom Wetlands, a network of interconnected lagoons and backwaters, are renowned for their rich biodiversity and critical role in supporting various species of flora and fauna. This model provides an in-depth exploration of the wetland ecosystem, including its hydrology, sediment composition, and the variety of habitats it supports, such as marshes, swamps, and mangroves. It also addresses the socio-economic aspects of the wetlands, including the livelihoods they support through fishing and tourism, while highlighting conservation challenges like pollution and invasive species. The model showcases ongoing efforts to promote sustainable management practices to protect this vital ecosystem.",
+            "info": {
+                "state": "Kerala",
+                "release": "May 30, 2025",
+                "geologicalAge": "Holocene",
+                "author": "Wetlands Conservation Group",
+                "license": "CC BY-NC",
+                "tags": [
+                    "wetland",
+                    "biodiversity",
+                    "ecosystem"
+                ],
+                "size": "Medium (200-2000m)",
+                "smallestVisibleFeature": "5-20 cm"
+            },
+            "sharing": {
+                "via_link": true,
+                "embed_3d_viewer": true
+            }
+        },
+        {
+            "index": 9,
+            "image": "https://greenverz.com/wp-content/uploads/2023/04/Greenverz_Eastern_ghats_001.jpg",
+            "title": "Eastern Ghats Biodiversity",
+            "year": 2023,
+            "coordinates": {
+                "latitude": 20.1305,
+                "longitude": 85.8350
+            },
+            "description": "This model showcases the unique biodiversity of the Eastern Ghats, highlighting its flora and fauna.",
+            "largeDescription": "The Eastern Ghats are a series of mountain ranges that run parallel to the eastern coast of India, known for their rich and varied biodiversity. This model explores the different ecosystems present within the Eastern Ghats, including tropical evergreen forests, deciduous forests, and grasslands. It discusses the unique plant and animal species that inhabit these ecosystems, many of which are endemic. Furthermore, the model addresses the environmental threats posed by deforestation, habitat fragmentation, and climate change, while highlighting conservation initiatives aimed at protecting this vital area and promoting sustainable development for local communities.",
+            "info": {
+                "state": "Odisha",
+                "release": "June 25, 2025",
+                "geologicalAge": "Mesozoic",
+                "author": "Biodiversity Institute",
+                "license": "CC BY-NC",
+                "tags": [
+                    "biodiversity",
+                    "Eastern Ghats",
+                    "ecosystem"
+                ],
+                "size": "Medium (200-2000m)",
+                "smallestVisibleFeature": "5-20 cm"
+            },
+            "sharing": {
+                "via_link": true,
+                "embed_3d_viewer": true
+            }
+        },
+        {
+            "index": 10,
+            "image": "https://livelihoods.eu/wp-content/uploads/2014/02/Sundarbans-4.jpg",
+            "title": "Sundarbans Mangrove",
+            "year": 2023,
+            "coordinates": {
+                "latitude": 21.9497,
+                "longitude": 88.1970
+            },
+            "description": "A model of the Sundarbans mangrove ecosystem, emphasizing its role in coastal protection.",
+            "largeDescription": "The Sundarbans, a UNESCO World Heritage site, is the largest mangrove forest in the world and serves as a critical habitat for numerous species, including the endangered Bengal tiger. This model examines the unique adaptations of mangrove trees to saltwater, their role in coastal protection against erosion and storm surges, and their importance in carbon sequestration. It highlights the rich biodiversity of the Sundarbans, showcasing the complex interrelationships between different species and their environment. The model also discusses the socio-economic aspects, including the livelihoods of local communities reliant on the mangroves for fishing and tourism, as well as ongoing conservation challenges such as climate change and habitat loss.",
+            "info": {
+                "state": "West Bengal",
+                "release": "August 15, 2025",
+                "geologicalAge": "Holocene",
+                "author": "Mangrove Research Society",
+                "license": "CC BY-NC",
+                "tags": [
+                    "mangrove",
+                    "ecosystem",
+                    "coastal"
+                ],
+                "size": "Medium (200-2000m)",
+                "smallestVisibleFeature": "5-20 cm"
+            },
+            "sharing": {
+                "via_link": true,
+                "embed_3d_viewer": true
+            }
+        }
+    ]
+}
