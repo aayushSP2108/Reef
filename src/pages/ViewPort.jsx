@@ -3,8 +3,8 @@ import { Canvas } from '@react-three/fiber';
 import { useGLTF, Stage, PresentationControls } from '@react-three/drei';
 
 function Model(props) {
-  const { scene } = useGLTF('/rocks_at_north_head.glb');
-  // const { scene } = useGLTF('/moss_covered_rock_pile.glb');
+  // const { scene } = useGLTF('/rocks_at_north_head.glb');
+  const { scene } = useGLTF('/moss_covered_rock_pile.glb');
   return <primitive object={scene} {...props} />;
 }
 
