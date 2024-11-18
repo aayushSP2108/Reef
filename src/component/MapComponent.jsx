@@ -8,6 +8,7 @@ import 'leaflet-gesture-handling/dist/leaflet-gesture-handling.css';
 import 'leaflet-fullscreen/dist/leaflet.fullscreen.css'; // Import full-screen CSS
 import 'leaflet-fullscreen'; // Import the full-screen control plugin
 import L from 'leaflet';
+import CostomMarker2 from '../assets/CostomMarker2.png';
 
 const { BaseLayer } = LayersControl;
 
@@ -17,8 +18,8 @@ export default function MapComponent({ filteredModels }) {
     const mapRef = useRef();  // To reference the map instance
 
     const customIcon = new L.Icon({
-        iconUrl: 'src/assets/CostomMarker2.png',
-        iconSize: [52, 52], // Set the size of the marker (optional)
+        iconUrl: CostomMarker2,
+        iconSize: [62, 52], // Set the size of the marker (optional)
         iconAnchor: [16, 32], // Anchor the icon (optional)
         popupAnchor: [0, -32], // Position of popup (optional)
       });

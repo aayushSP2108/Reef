@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
+import CostomMarker2 from '../assets/CostomMarker2.png';
 
 export default function FormGeoreference({
   toast,
@@ -14,7 +15,7 @@ export default function FormGeoreference({
   setFormData,
 }) {
   const customIcon = new L.Icon({
-    iconUrl: 'src/assets/CostomMarker2.png',
+    iconUrl: CostomMarker2,
     iconSize: [62, 52], // Set the size of the marker (optional)
     // iconAnchor: [16, 32], // Anchor the icon (optional)
     // popupAnchor: [0, -32], // Position of popup (optional)
