@@ -153,8 +153,29 @@ export default function Contribute() {
     }, [userData]);
 
     if (!userData || !isLogin) {
-        return <div>Login</div>; // Better UX: Loading state
+        return (
+            <div style={{ minHeight: `${window.innerHeight - 128}px`, overflow: 'hidden' }} className="bg-gray-100 flex flex-col items-center justify-center p-6 relative">
+                <h1 className="text-3xl font-bold mb-6 text-center">
+                    Please log in to upload your model and its details.
+                </h1>
+
+                <div
+                    onClick={() => navigate('/Login')}
+                    className="box cursor-pointer px-6 py-2 flex items-center rounded-lg justify-center border border-gray-300"
+                    style={{
+                        backgroundColor: colors.differentColor,
+                        color: colors.mainBackgroundColor,
+                        borderColor: colors.borderBoxColor,
+                        width: '30%',
+                        height: '40px',
+                    }}
+                >
+                    Go to Login
+                </div>
+            </div>
+        );
     }
+
 
     return (
         <div className="h-full">
