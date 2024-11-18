@@ -103,17 +103,32 @@ export default function Contribute() {
             .then(data => {
                 if (data.status === "ok") {
                     toast.success("Contribution Submitted Successfully!");
-                    // setFormData({
-                    //     title: '',
-                    //     latitude: '',
-                    //     longitude: '',
-                    //     description: '',
-                    //     largeDescription: '',
-                    //     license: '',
-                    //     size: '',
-                    //     smallestVisibleFeature: '',
-                    //     contributors: [],
-                    // })
+                    setFormData({
+                        longitude: '',
+                        contactid: '',
+                        contactinfo: '',
+                        // index used automatically
+                        // image
+                        title: '',
+                        // year,
+                        address: '',
+                        description: '',
+                        largeDescription: '',
+                        // state,
+                        releaseDate: '',
+                        // geologicalAge: { type: String, required: true },
+                        // clasticSedimentology: [{ type: String }],
+                        // carbonateAndEvaporiteSedimentology: [{ type: String }],
+                        // metamorphic: [{ type: String }],
+                        author: '',
+                        license: '',
+                        tags: [],
+                        size: '',
+                        smallestVisibleFeature: '',
+                        contributors: [],
+                        citation: '',
+                        visibility: '',
+                    })
                 } else {
                     toast.error(data.message || "Failed to submit the form.");
                 }
@@ -137,9 +152,9 @@ export default function Contribute() {
         }
     }, [userData]);
 
-    // if (!userData || !isLogin) {
-    //     return <div>Login</div>; // Better UX: Loading state
-    // }
+    if (!userData || !isLogin) {
+        return <div>Login</div>; // Better UX: Loading state
+    }
 
     return (
         <div className="h-full">
