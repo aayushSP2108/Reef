@@ -19,7 +19,7 @@ export default function ViewPort() {
         top: 0,
         left: 0,
         width: '100vw',  // Full viewport width
-        height: '100vh', // Full viewport height
+        // height: '100vh', // Full viewport height
         touchAction: 'none',  // Add this line to disable default touch actions
       }}
     >
