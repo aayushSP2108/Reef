@@ -7,6 +7,7 @@ import 'leaflet-gesture-handling';
 import 'leaflet-gesture-handling/dist/leaflet-gesture-handling.css';
 import 'leaflet-fullscreen/dist/leaflet.fullscreen.css'; // Import full-screen CSS
 import 'leaflet-fullscreen'; // Import the full-screen control plugin
+import L from 'leaflet';
 
 const { BaseLayer } = LayersControl;
 
@@ -14,6 +15,13 @@ export default function MapComponent({ filteredModels }) {
     const [models, setModels] = useState([]);
     const navigate = useNavigate();
     const mapRef = useRef();  // To reference the map instance
+
+    const customIcon = new L.Icon({
+        iconUrl: 'src/assets/CostomMarker2.png',
+        iconSize: [52, 52], // Set the size of the marker (optional)
+        iconAnchor: [16, 32], // Anchor the icon (optional)
+        popupAnchor: [0, -32], // Position of popup (optional)
+      });
 
     useEffect(() => {
         setModels(Array.isArray(filteredModels) ? filteredModels : []);
@@ -81,7 +89,7 @@ export default function MapComponent({ filteredModels }) {
             </LayersControl>
 
             {models.map((model) => (
-                <Marker key={model.index} position={[model.coordinates.latitude, model.coordinates.longitude]}>
+                <Marker key={model.index} icon={customIcon} position={[model.coordinates.latitude, model.coordinates.longitude]}>
                     <Popup>
                         <div>
                             <FaTree style={{ marginRight: '5px', color: 'green' }} />

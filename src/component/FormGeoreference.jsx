@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
+import L from 'leaflet';
 
 export default function FormGeoreference({
   toast,
@@ -12,6 +13,13 @@ export default function FormGeoreference({
   colors,
   setFormData,
 }) {
+  const customIcon = new L.Icon({
+    iconUrl: 'src/assets/CostomMarker2.png',
+    iconSize: [62, 52], // Set the size of the marker (optional)
+    // iconAnchor: [16, 32], // Anchor the icon (optional)
+    // popupAnchor: [0, -32], // Position of popup (optional)
+  });
+
   const [position, setPosition] = useState([
     formData.latitude || 51.505,
     formData.longitude || -0.09,
@@ -102,19 +110,8 @@ export default function FormGeoreference({
       const { lat, lng } = e.latlng;
       setPosition([lat, lng]);
       setFormData({ ...formData, latitude: lat, longitude: lng });
+      map.flyTo([lat, lng], 13, { animate: true, duration: 1.5 }); 
     });
-    return null;
-  };
-
-  // Ensure that the map view moves when position changes
-  const MoveMapView = () => {
-    const map = useMap();
-    useEffect(() => {
-      if (position) {
-        map.flyTo(position, 13, { animate: true, duration: 1.5 }); // Smoothly move to new position
-      }
-    }, [position, map]);
-
     return null;
   };
 
@@ -252,13 +249,12 @@ export default function FormGeoreference({
                 style={{ width: '100%', height: '100%' }}
               >
                 <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-                <Marker position={position}>
+                <Marker position={position} icon={customIcon}>
                   <Popup>
                     Selected location: {position[0]}, {position[1]}
                   </Popup>
                 </Marker>
                 <LocationClick />
-                <MoveMapView />
               </MapContainer>
             </div>
           </div>
