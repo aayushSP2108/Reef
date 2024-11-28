@@ -3,15 +3,13 @@ import { Canvas } from '@react-three/fiber';
 import { useGLTF, Stage, PresentationControls } from '@react-three/drei';
 
 function Model(props) {
-  // const { scene } = useGLTF('public/rocks_at_north_head.glb');
-  const { scene } = useGLTF('../assets/moss_covered_rock_pile.glb');
+  const { scene } = useGLTF('public/rocks_at_north_head.glb');
   return <primitive object={scene} {...props} />;
 }
 
 export default function ViewPort() {
   const [isLoading, setIsLoading] = useState(true);
-  useGLTF.preload('../assets/moss_covered_rock_pile.glb');
-  // useGLTF.preload('/rocks_at_north_head.glb');
+
   const handleLoaded = () => {
     setIsLoading(false);
   };
