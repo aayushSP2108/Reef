@@ -119,6 +119,7 @@ export default function FormGeoreference({
   return (
     <div>
       <form onSubmit={handleSubmit} className="gap-6 p-5">
+      <img className='h-3' src={CostomMarker2} alt="My Image" />
         {/* <div className="flex items-center justify-between mb-4 gap-10">
           <div className="flex-1">
             <label
