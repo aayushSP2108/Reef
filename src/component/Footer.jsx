@@ -6,7 +6,7 @@ import { IoMail } from "react-icons/io5";
 
 const Footer = () => {
     return (
-        <footer className="w-full border-t border-gray-200 bg-white">
+        <footer className=" fixed bottom-0 w-full border-t border-gray-200 bg-white">
             <div className="container flex items-center p-5">
 
                 <div className='text-[#11023b] font-bold pr-7' style={{ borderRightWidth: 1, borderColor: colors.borderMainColor }}>

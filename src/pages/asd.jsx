@@ -1,35 +1,36 @@
 import React, { Suspense, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { useGLTF, Stage, PresentationControls, OrbitControls, BakeShadows, Environment, Detailed } from '@react-three/drei';
+import { useGLTF, Stage, PresentationControls, OrbitControls } from '@react-three/drei';
 
-// Create 800 objects with random position and rotation data
 const positions = [...Array(800)].map(() => ({
   position: [40 - Math.random() * 80, 40 - Math.random() * 80, 40 - Math.random() * 80],
   rotation: [Math.random() * Math.PI * 2, Math.random() * Math.PI * 2, Math.random() * Math.PI * 2],
 }))
 
 
+function Model({ ...props, brightness }) {
+  // const { scene } = useGLTF('./moss_covered_rock_pile.glb');
+   const levels = useGLTF(['./public/bust-1-d.glb', './public//bust-2-d.glb', './public//bust-3-d.glb', './public//bust-4-d.glb'])
+  // Apply brightness to the scene using toneMappingExposure
+  scene.traverse((child) => {
+    if (child.isMesh) {
+      child.material.emissiveIntensity = brightness;
+    }
+  });
 
-
-
-
-function Bust(props) {
-  // This will load 4 GLTF in parallel using React Suspense
-  const levels = useGLTF(['./public/bust-1-d.glb', './public//bust-2-d.glb', './public//bust-3-d.glb', './public//bust-4-d.glb'])
-  // By the time we're here these GLTFs exist, they're loaded
-  // There are 800 instances of this component, but the GLTF data is cached and will be re-used ootb
+  // return <primitive object={scene} />;
   return (
-    <Detailed distances={[0, 15, 25, 35, 100]} {...props}>
-      {/* All we need to do is dump them into the Detailed component and define some distances
-          Since we use a JSX mesh to represent each bust the geometry is being re-used w/o cloning */}
-      {levels.map(({ nodes, materials }, index) => (
-        <mesh receiveShadow castShadow key={index} geometry={nodes.Mesh_0001.geometry} material={materials.default} material-envMapIntensity={0.25} />
-      ))}
-      <group />
-    </Detailed>
-  )
+      <Detailed distances={[0, 15, 25, 35, 100]} {...props}>
+        {/* All we need to do is dump them into the Detailed component and define some distances
+            Since we use a JSX mesh to represent each bust the geometry is being re-used w/o cloning */}
+        {levels.map(({ nodes, materials }, index) => (
+          // receiveShadow castShadow
+          <mesh key={index} geometry={nodes.Mesh_0001.geometry} material={materials.default} material-envMapIntensity={0.25} />
+        ))}
+        <group />
+      </Detailed>
+    )
 }
-
 
 export default function ViewPort() {
   const [isLoading, setIsLoading] = useState(true);
@@ -41,29 +42,27 @@ export default function ViewPort() {
 
   return (
     <div style={{ height: 'full', display: 'flex' }}>
-    <Suspense fallback={<span>loading...</span>}>
+      {/* Left: Canvas */}
+      <Suspense fallback={<span>loading...</span>}>
       <Canvas
-        // Quick shortcut for setting up shadow maps
+        dpr={[1, 2]}
         shadows
-        // Only render on changes and movement
-        frameloop="demand"
-        camera={{ position: [0, 0, 40] }}
+        camera={{ fov: 45 }}
         style={{
           flex: 1,
           height: `${window.innerHeight - 134}px`,
           touchAction: 'none',
         }}
-        >
-        {/* Let's render 800 Bust components with the data above */}
-        {positions.map((props, i) => (
-          <Bust key={i} {...props} />
+      >
+        <color attach="background" args={['#fff']} />
+        <OrbitControls />
+          <Stage environment={'sunset'}>
+          {positions.map((props, i) => (
+          <Model key={i} {...props}  scale={0.01} brightness={brightness} onUpdate={handleLoaded}/>
         ))}
-        <OrbitControls zoomSpeed={0.075} />
-        <pointLight position={[0, 0, 0]} intensity={0.5} />
-        <spotLight intensity={2.5} position={[50, 50, 50]} castShadow />
-        <Environment preset="city" brightness={brightness} />
-        <BakeShadows />
+          </Stage>
       </Canvas>
+
 
       {/* Right: Sidebar Panel */}
       <div
@@ -107,7 +106,7 @@ export default function ViewPort() {
         </div>
         </div>
       </div>
-    </Suspense>
+      </Suspense>      
     </div>
   );
 }

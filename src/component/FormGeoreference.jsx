@@ -4,6 +4,112 @@ import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import CostomMarker2 from '../assets/CostomMarker2.png';
 
+const statesOptions = [
+  { value: "Andhra Pradesh", label: "Andhra Pradesh" },
+  { value: "Arunachal Pradesh", label: "Arunachal Pradesh" },
+  { value: "Assam", label: "Assam" },
+  { value: "Bihar", label: "Bihar" },
+  { value: "Chhattisgarh", label: "Chhattisgarh" },
+  { value: "Goa", label: "Goa" },
+  { value: "Gujarat", label: "Gujarat" },
+  { value: "Haryana", label: "Haryana" },
+  { value: "Himachal Pradesh", label: "Himachal Pradesh" },
+  { value: "Jharkhand", label: "Jharkhand" },
+  { value: "Karnataka", label: "Karnataka" },
+  { value: "Kerala", label: "Kerala" },
+  { value: "Madhya Pradesh", label: "Madhya Pradesh" },
+  { value: "Maharashtra", label: "Maharashtra" },
+  { value: "Manipur", label: "Manipur" },
+  { value: "Meghalaya", label: "Meghalaya" },
+  { value: "Mizoram", label: "Mizoram" },
+  { value: "Nagaland", label: "Nagaland" },
+  { value: "Odisha", label: "Odisha" },
+  { value: "Punjab", label: "Punjab" },
+  { value: "Rajasthan", label: "Rajasthan" },
+  { value: "Sikkim", label: "Sikkim" },
+  { value: "Tamil Nadu", label: "Tamil Nadu" },
+  { value: "Telangana", label: "Telangana" },
+  { value: "Tripura", label: "Tripura" },
+  { value: "Uttar Pradesh", label: "Uttar Pradesh" },
+  { value: "West Bengal", label: "West Bengal" }
+];
+
+// Geological Ages
+const geologicalAgesOptions = [
+  { value: "Quaternary", label: "Quaternary" },
+  { value: "Neogene", label: "Neogene" },
+  { value: "Paleogene", label: "Paleogene" },
+  { value: "Cretaceous", label: "Cretaceous" },
+  { value: "Jurassic", label: "Jurassic" },
+  { value: "Triassic", label: "Triassic" },
+  { value: "Permian", label: "Permian" },
+  { value: "Carboniferous", label: "Carboniferous" },
+  { value: "Devonian", label: "Devonian" },
+  { value: "Silurian", label: "Silurian" },
+  { value: "Ordovician", label: "Ordovician" },
+  { value: "Cambrian", label: "Cambrian" },
+  { value: "Holocene", label: "Holocene" }
+];
+
+// Clastic Sedimentology
+const ClasticSedimentologyOptions = [
+  { value: "Fluvial / Alluvial", label: "Fluvial / Alluvial" },
+  { value: "Aeolian", label: "Aeolian" },
+  { value: "Lacustrine", label: "Lacustrine" },
+  { value: "Shallow Marine / Paralic", label: "Shallow Marine / Paralic" },
+  { value: "Shelf", label: "Shelf" },
+  { value: "Slope", label: "Slope" },
+  { value: "Basin Floor", label: "Basin Floor" }
+];
+
+// Carbonate and Evaporite Sedimentology
+const CarbonateAndEvaporiteSedimentologyOptions = [
+  { value: "Marine", label: "Marine" },
+  { value: "Ramp", label: "Ramp" },
+  { value: "Reef", label: "Reef" },
+  { value: "Evaporite Playa", label: "Evaporite Playa" }
+];
+
+// Metamorphic
+const MetamorphicOptions = [
+  { value: "Slate", label: "Slate" },
+  { value: "Phyllite", label: "Phyllite" },
+  { value: "Schist", label: "Schist" },
+  { value: "Gneiss", label: "Gneiss" },
+  { value: "Marble", label: "Marble" },
+  { value: "Quartzite", label: "Quartzite" }
+];
+
+// Extrusive Igneous
+const ExtrusiveIgneousOptions = [
+  { value: "Pyroclastic Flow Deposit", label: "Pyroclastic Flow Deposit" },
+  { value: "Lava Flow Deposit", label: "Lava Flow Deposit" }
+];
+
+// Intrusive Igneous
+const IntrusiveIgneousOptions = [
+  { value: "Dyke", label: "Dyke" },
+  { value: "Sill", label: "Sill" },
+  { value: "Lacolith", label: "Lacolith" }
+];
+
+// Structure
+const StructureOptions = [
+  { value: "Folds", label: "Folds" },
+  { value: "Extensional Faults", label: "Extensional Faults" },
+  { value: "Strike Slip Faults", label: "Strike Slip Faults" },
+  { value: "Inversion Structure", label: "Inversion Structure" },
+  { value: "Joints", label: "Joints" },
+  { value: "Veins", label: "Veins" },
+  { value: "Reverse / Thrust Faults", label: "Reverse / Thrust Faults" }
+];
+
+// Fossils (Empty array)
+const FossilsOptions = [];
+
+// Quaternary Geomorphology (Empty array)
+const QuaternaryGeomorphologyOptions = [];
+
 export default function FormGeoreference({
   toast,
   setSelectedTopic,
@@ -20,6 +126,19 @@ export default function FormGeoreference({
     // iconAnchor: [16, 32], // Anchor the icon (optional)
     // popupAnchor: [0, -32], // Position of popup (optional)
   });
+
+  const [errors, setErrors] = useState({});
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    handleChange(e); // Call the passed handleChange to update formData
+    if (errors[name]) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        [name]: undefined, // Remove error for the specific field being edited
+      }));
+    }
+  };
 
   const [position, setPosition] = useState([
     formData.latitude || 51.505,
@@ -111,7 +230,7 @@ export default function FormGeoreference({
       const { lat, lng } = e.latlng;
       setPosition([lat, lng]);
       setFormData({ ...formData, latitude: lat, longitude: lng });
-      map.flyTo([lat, lng], 13, { animate: true, duration: 1.5 }); 
+      map.flyTo([lat, lng], 13, { animate: true, duration: 1.5 });
     });
     return null;
   };
@@ -119,7 +238,7 @@ export default function FormGeoreference({
   return (
     <div>
       <form onSubmit={handleSubmit} className="gap-6 p-5">
-      <img className='h-3' src={CostomMarker2} alt="My Image" />
+        <img className='h-1' src={CostomMarker2} alt="My Image" />
         {/* <div className="flex items-center justify-between mb-4 gap-10">
           <div className="flex-1">
             <label
@@ -159,7 +278,7 @@ export default function FormGeoreference({
           </div>
         </div> */}
 
-        <div className="flex gap-9 h-80">
+        <div className="flex gap-9 pb-4">
           <div className="w-1/2 flex flex-col h-full">
             <div className="flex-1">
               <label
@@ -234,6 +353,24 @@ export default function FormGeoreference({
                 style={{ minHeight: '100px', flexGrow: 1 }}
               />
             </div>
+
+            <div className="flex-1 ">
+              <label htmlFor="size" className="block text-sm font-medium mb-1">State</label>
+              <select
+                id="size"
+                name="size"
+                value={formData.size}
+                onChange={handleInputChange}
+                required
+                className={`w-full p-3 border rounded-md focus:outline-none focus:shadow-md ${errors.size ? 'border-red-500' : ''}`}
+              >
+                <option value="" disabled style={{}}>Please specify the state in India from which the model is sourced.</option>
+                {statesOptions.map((option) => (
+                  <option key={option.value} value={option.value}>{option.label}</option>
+                ))}
+              </select>
+              {errors.size && <span className="text-red-500 text-sm">{errors.size}</span>}
+            </div>
           </div>
 
           <div className="w-1/2 flex flex-col">
@@ -259,6 +396,65 @@ export default function FormGeoreference({
                 <LocationClick />
               </MapContainer>
             </div>
+          </div>
+        </div>
+
+        {/* Model Size and Smallest Visible Feature */}
+        <div className="flex items-center justify-between mb-4 gap-10">
+          {/* Model Size */}
+          <div className="flex-1 relative">
+            <label htmlFor="size" className="block text-sm font-medium mb-1">Model Size</label>
+            <select
+              id="size"
+              name="size"
+              value={formData.size}
+              onChange={handleInputChange}
+              required
+              className={`w-full p-3 border rounded-md focus:outline-none focus:shadow-md ${errors.size ? 'border-red-500' : ''}`}
+            >
+              <option value="" disabled>Geological Ages</option>
+              {geologicalAgesOptions.map((option) => (
+                <option key={option.value} value={option.value}>{option.label}</option>
+              ))}
+            </select>
+            {errors.size && <span className="text-red-500 text-sm">{errors.size}</span>}
+          </div>
+
+          {/* Smallest Visible Feature */}
+          <div className="flex-1">
+            <label htmlFor="smallestVisibleFeature" className="block text-sm font-medium mb-1">Smallest Visible Feature</label>
+            <select
+              id="smallestVisibleFeature"
+              name="smallestVisibleFeature"
+              value={formData.smallestVisibleFeature}
+              onChange={handleInputChange}
+              required
+              className={`w-full p-3 border rounded-md focus:outline-none focus:shadow-md ${errors.smallestVisibleFeature ? 'border-red-500' : ''}`}
+            >
+              <option value="" disabled>Select an option</option>
+              {ClasticSedimentologyOptions.map((option) => (
+                <option key={option.value} value={option.value}>{option.label}</option>
+              ))}
+            </select>
+            {errors.smallestVisibleFeature && <span className="text-red-500 text-sm">{errors.smallestVisibleFeature}</span>}
+          </div>
+
+          <div className="flex-1">
+            <label htmlFor="smallestVisibleFeature" className="block text-sm font-medium mb-1">Smallest Visible Feature</label>
+            <select
+              id="smallestVisibleFeature"
+              name="smallestVisibleFeature"
+              value={formData.smallestVisibleFeature}
+              onChange={handleInputChange}
+              required
+              className={`w-full p-3 border rounded-md focus:outline-none focus:shadow-md ${errors.smallestVisibleFeature ? 'border-red-500' : ''}`}
+            >
+              <option value="" disabled>Select an option</option>
+              {CarbonateAndEvaporiteSedimentologyOptions.map((option) => (
+                <option key={option.value} value={option.value}>{option.label}</option>
+              ))}
+            </select>
+            {errors.smallestVisibleFeature && <span className="text-red-500 text-sm">{errors.smallestVisibleFeature}</span>}
           </div>
         </div>
 

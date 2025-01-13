@@ -23,12 +23,14 @@ const modeldataSchema = new mongoose.Schema({
     description: { type: String, required: true },
     largeDescription: { type: String, required: true },
     info: {
-        // state,
         releaseDate: { type: String, required: true },
-        // geologicalAge: { type: String, required: true },
-        // clasticSedimentology: [{ type: String }],
-        // carbonateAndEvaporiteSedimentology: [{ type: String }],
-        // metamorphic: [{ type: String }],
+        
+        state: { type: String, required: true },
+        geologicalAge: { type: String },
+        clasticSedimentology: [{ type: String }],
+        carbonateAndEvaporiteSedimentology: [{ type: String }],
+        metamorphic: [{ type: String }],
+
         author: { type: String, required: true },
         license: { type: String, required: true },
         tags: [{ type: String, required: true }],

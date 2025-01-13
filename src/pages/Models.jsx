@@ -119,7 +119,7 @@ export default function Models() {
   const [searchQuery, setSearchQuery] = useState('');
   const [showFilter, setShowFilter] = useState(() => {
     const storedShowFilter = localStorage.getItem('showFilter');
-    return storedShowFilter !== null ? JSON.parse(storedShowFilter) : false;
+    return storedShowFilter !== null ? JSON.parse(storedShowFilter) : true;
   });
   const [selectedFilters, setSelectedFilters] = useState([]);
   const [loading, setLoading] = useState(false); // Add loading state
@@ -258,18 +258,19 @@ export default function Models() {
         )}
 
         <div className='flex-1 h-full'>
-          {/* Loading Spinner */}
-          {loading && <div>Loading models...</div>}
-          
-          {/* Error Handling */}
-          {error && <div className="error">{error}</div>}
+
 
           <div className=' p-4 -z-10 h-96 overflow-hidden'>
             <MapComponent filteredModels={filteredModels} />
           </div>
 
           <div className={`${gridMode != 'Solo Grid' ? 'p-4' : 'p-8'} flex-grow`}>
-            {filteredModels.length === 0 && <span>No models are available with the current settings.</span>}
+                      {/* Loading Spinner */}
+          {loading && <div>Loading models...</div>}
+          
+          {/* Error Handling */}
+          {error && <div className="error">{error}</div>}
+            {/* {filteredModels.length === 0 && <span>No models are available with the current settings.</span>} */}
 
             <div className={`grid grid-cols-1 ${gridMode == 'Multi Grid' ? 'sm:grid-cols-2 lg:grid-cols-3' : ''} gap-4`}>
               {filteredModels.map((model, index) => (

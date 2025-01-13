@@ -45,47 +45,47 @@ const Main = () => {
 
   const getData = async () => {
     try {
-        const token = await localStorage.getItem("token");
-        if (!token) {
-            console.error("No token found in localStorage");
-            setIsLogin(false)
-            return;
-        }
+      const token = await localStorage.getItem("token");
+      if (!token) {
+        console.error("No token found in localStorage");
+        setIsLogin(false)
+        return;
+      }
 
 
-        const response = await fetch(`${API_BASE_URL}:${USERSDATA_ENDPOINT}`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ token })
-        });
+      const response = await fetch(`${API_BASE_URL}:${USERSDATA_ENDPOINT}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ token })
+      });
 
-        if (!response.ok) {
-            throw new Error('Network response was not ok ' + response.statusText);
-        }
+      if (!response.ok) {
+        throw new Error('Network response was not ok ' + response.statusText);
+      }
 
-        const data = await response.json();
+      const data = await response.json();
 
-        if (data.data === 'token expired') {
-            alert(
-                "Oops! Your Session Has Expired",
-                "We’re sorry for the inconvenience. It looks like your session has expired due to inactivity or other reasons"
-            );
-            setIsLogin(false)
-            return;
-        }
+      if (data.data === 'token expired') {
+        alert(
+          "Oops! Your Session Has Expired",
+          "We’re sorry for the inconvenience. It looks like your session has expired due to inactivity or other reasons"
+        );
+        setIsLogin(false)
+        return;
+      }
 
-        setUserData(data.data); // Update global user data state
+      setUserData(data.data); // Update global user data state
     } catch (error) {
-        console.error('Error fetching data:', error);
+      console.error('Error fetching data:', error);
     }
-};
+  };
 
   return (
     <div style={{ backgroundColor: colors.mainBackgroundColor, color: colors.mainTextColor, fontSize: 14 }}>
       <Navbar />
-      <div style={{ marginTop: '70px' }} />
+      <div style={{ marginTop: '70px', marginBottom: '70px' }} >
       <Routes>
         <Route path="/" element={<HomeScreen />} />
         <Route path="/login" element={<Login />} />
@@ -97,6 +97,7 @@ const Main = () => {
         <Route path="/overview" element={<Overview />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+      </div>
       <Footer />
     </div>
   );
