@@ -1,3 +1,5 @@
+// npm run dev
+
 import React, { useContext, useEffect } from 'react';
 import { HashRouter, Route, Routes } from 'react-router-dom';
 import { GlobalStateProvider, GlobalStateContext } from '../Context/GlobalStateContext';
