@@ -15,7 +15,7 @@ const positions = [...Array(800)].map(() => ({
 
 function Bust(props) {
   // This will load 4 GLTF in parallel using React Suspense
-  const levels = useGLTF(['./assets/bust-1-d.glb', './assets//bust-2-d.glb', './assets//bust-3-d.glb', './assets//bust-4-d.glb'])
+  const levels = useGLTF(['./assets/bust-1-d.glb', './assets/bust-2-d.glb', './assets/bust-3-d.glb', './assets/bust-4-d.glb'])
   // By the time we're here these GLTFs exist, they're loaded
   // There are 800 instances of this component, but the GLTF data is cached and will be re-used ootb
   return (
