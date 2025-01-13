@@ -4,7 +4,7 @@ import { useGLTF, Stage, PresentationControls } from '@react-three/drei';
 
 function Model({ brightness }) {
   // const { scene } = useGLTF('./moss_covered_rock_pile.glb');
-  const { scene } = useGLTF('https://github.com/aayushSP2108/Reef/blob/main/moss_covered_rock_pile.glb');
+  const { scene } = useGLTF('./moss_covered_rock_pile.glb');
 
   
   // Apply brightness to the scene using toneMappingExposure
