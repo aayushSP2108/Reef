@@ -3,7 +3,7 @@ import { Canvas } from '@react-three/fiber';
 import { useGLTF, Stage, PresentationControls } from '@react-three/drei';
 
 function Model({ brightness }) {
-  const { scene } = useGLTF('public/rocks_at_north_head.glb');
+  const { scene } = useGLTF('./public/moss_covered_rock_pile.glb');
   
   // Apply brightness to the scene using toneMappingExposure
   scene.traverse((child) => {
