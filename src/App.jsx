@@ -87,7 +87,7 @@ const Main = () => {
   return (
     <div style={{ backgroundColor: colors.mainBackgroundColor, color: colors.mainTextColor, fontSize: 14 }}>
       <Navbar />
-      <div style={{ marginTop: '70px', marginBottom: '70px' }} >
+      <div style={{ paddingTop: '70px', paddingBottom: '70px' }} >
       <Routes>
         <Route path="/" element={<HomeScreen />} />
         <Route path="/login" element={<Login />} />

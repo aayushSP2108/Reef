@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { sizeOptions, featureOptions } from '../data/options';
 
 export default function FormModelInfo({
   toast,
@@ -65,30 +66,14 @@ export default function FormModelInfo({
   // Handle next button click
   const handleNext = () => {
     setIsSubmitting(true);
+    console.log(formData);
     if (validate()) {
-      setSelectedTopic('Georeference');
+      setSelectedTopic('Model Details');
     } else {
       toast.error('Please fill in all required fields');
     }
     setIsSubmitting(false);
   };
-
-  const sizeOptions = [
-    { value: 'Microscopic (<1cm)', label: 'Microscopic (<1cm)' },
-    { value: 'Hand specimen (1cm-1m)', label: 'Hand specimen (1cm-1m)' },
-    { value: 'Small (0-200m)', label: 'Small (0-200m)' },
-    { value: 'Medium (200-2000m)', label: 'Medium (200-2000m)' },
-    { value: 'Large (>2000m)', label: 'Large (>2000m)' },
-    { value: 'Very large (>10km)', label: 'Very large (>10km)' },
-  ];
-
-  const featureOptions = [
-    { value: '<1cm', label: '<1 cm' },
-    { value: '1-5cm', label: '1-5 cm' },
-    { value: '5-20cm', label: '5-20 cm' },
-    { value: '20-50cm', label: '20-50 cm' },
-    { value: '>50cm', label: '>50 cm' },
-  ];
 
   return (
     <div>

@@ -68,10 +68,10 @@ export default function DetailsScreen() {
     };
 
     useEffect(() => {
-        if(modelVia){
+        if (modelVia) {
             setModel(modelVia)
             console.log('modelVia')
-        }else if (modelIndex) {
+        } else if (modelIndex) {
             fetchModel();
             console.log('fetchModel')
         }
@@ -185,8 +185,11 @@ export default function DetailsScreen() {
 
                         <div className=' rounded-xl w-full border-[1px] p-5 mb-5'>
                             <div style={{ fontWeight: 500 }} className='mb-3'>Citation</div>
-                            <div className='flex justify-between pb-2'>
-                                <span style={{ color: colors.subTextColor }} className='text-right'>{model?.citation}</span>
+                            <div className=' justify-between pb-2'>
+                                <span style={{ color: colors.subTextColor }} className='text-right'>{model?.citation} {`\n`}</span>
+                                <a href={`https://aayushsp2108.github.io/Reef/#/Models/${model.index}`} style={{ color: colors.subTextColor }} className='text-right underline'>
+                                    https://aayushsp2108.github.io/Reef/#/Models/{model.index}
+                                </a>
                             </div>
                         </div>
                     </div>

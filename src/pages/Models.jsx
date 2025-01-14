@@ -1,3 +1,41 @@
+// import React from 'react';
+
+// // A component that renders a scrollable div
+// const ScrollableDiv = ({ id, content }) => {
+//   return (
+//     <div className="scroll-box" id={id}>
+//       {content.map((line, index) => (
+//         <p key={index}>{line}</p>
+//       ))}
+//     </div>
+//   );
+// };
+
+// const Models = () => {
+//   // Content for both divs
+//   const content = Array(100).fill('some line'); // Generate 'some line' * 100
+
+//   return (
+//     <div className="w-full flex">
+//       <div className="w-1/2 h-screen overflow-y-auto">
+//         {/* First scrollable div */}
+//         <ScrollableDiv id="div1" content={content} />
+//       </div>
+//       <div className="w-1/2 h-screen  overflow-y-auto">
+//         {/* Second scrollable div */}
+//         <ScrollableDiv id="div2" content={content} />
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Models;
+
+
+
+
+
+
 // States
 const states = [
   { name: "Andhra Pradesh" },
@@ -110,6 +148,7 @@ import ModelList from '../component/ModelList';
 import MapComponent from '../component/MapComponent';
 import { GlobalStateContext } from '../../Context/GlobalStateContext';
 import { API_BASE_URL, GETALLMODELS_ENDPOINT } from '../../Constants/Constants';
+import AllModels from '../data/StoredModels.json';
 
 export default function Models() {
   const { userData, isLogin } = useContext(GlobalStateContext); // Assuming user context is used here
@@ -140,7 +179,7 @@ export default function Models() {
       });
       const data = await response.json();
       if (response.ok) {
-        setAllModels(data.data); // Assuming response contains a 'data' field
+        // setAllModels(data.data); // Assuming response contains a 'data' field
       } else {
         setError("Error fetching models: " + data.message);
       }
@@ -150,6 +189,13 @@ export default function Models() {
     }
     setLoading(false);
   };
+
+  useEffect(() => {
+    if(loading){
+      setAllModels(AllModels.StoredModels)
+    }
+  }, [loading]);
+
 
   // Update storedModels whenever allModels changes
   useEffect(() => {
@@ -201,17 +247,17 @@ export default function Models() {
   });
 
   return (
-    <div className='h-full'>
+    <div>
       <ModelNavbar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
-      <div style={{ marginTop: '70px' }} />
+      {/* <div style={{ marginTop: '70px' }} /> */}
       
       <div style={{ position: 'sticky', top: '70px', zIndex: 9998 }}>
         <Toolbox setShowFilter={setShowFilter} gridMode={gridMode} setGridMode={setGridMode} showFilter={showFilter} />
       </div>
 
-      <div className='flex w-full'>
+      <div className='flex'>
         {showFilter && (
-          <div style={{ borderRightWidth: 1, borderColor: colors.borderMainColor }} className='hidden md:block sm:w-[24vw] lg:w-[20vw] px-4 pb-10'>
+          <div style={{ borderRightWidth: 1, borderColor: colors.borderMainColor }} className=' hidden md:block sm:w-[24vw] lg:w-[20vw] px-4 pb-32 h-screen overflow-y-auto'>
             {(selectedFilters.length > 0 || searchQuery.length > 0) && (
               <div className='py-4 border-b-2 border-dotted'>
                 <div className='flex justify-between items-center'>
@@ -257,15 +303,15 @@ export default function Models() {
           </div>
         )}
 
-        <div className='flex-1 h-full'>
-
+        <div className='flex-1 h-screen overflow-y-auto'>
 
           <div className=' p-4 -z-10 h-96 overflow-hidden'>
             <MapComponent filteredModels={filteredModels} />
           </div>
 
           <div className={`${gridMode != 'Solo Grid' ? 'p-4' : 'p-8'} flex-grow`}>
-                      {/* Loading Spinner */}
+          
+          {/* Loading Spinner */}
           {loading && <div>Loading models...</div>}
           
           {/* Error Handling */}
@@ -289,38 +335,3 @@ export default function Models() {
     </div>
   );
 }
-
-
-// import React, { useEffect, useState } from 'react';
-// import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-// import { FaTree } from 'react-icons/fa'; // Example icon from react-icons
-// import 'leaflet/dist/leaflet.css';
-
-// export default function MapComponent({filteredModels}) {
-//     const [models, setModels] = useState([]);
-
-//     useEffect(() => {
-//         setModels(Array.isArray(filteredModels) ? filteredModels : []);
-//     }, [filteredModels]);
-
-//     return (
-//         <MapContainer center={[20, 78]} zoom={5} style={{ height: '100vh', width: '100%' }}>
-//             <TileLayer
-//                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-//                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-//             />
-            
-//             {models.map((model) => (
-//                 <Marker key={model.index} position={[model.coordinates.latitude, model.coordinates.longitude]}>
-//                     <Popup>
-//                         <div>
-//                             <FaTree style={{ marginRight: '5px', color: 'green' }} />
-//                             <strong>{model.title}</strong><br />
-//                             {model.description}
-//                         </div>
-//                     </Popup>
-//                 </Marker>
-//             ))}
-//         </MapContainer>
-//     );
-// }

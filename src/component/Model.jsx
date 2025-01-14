@@ -18,7 +18,7 @@ const Model = ({ model, gridMode }) => {
     return (
         <>
             <style>{`
-            .imagehover::after {
+            .imagehovergridMode::after {
             pointer-events: none;
                 content: '';
                 position: absolute;
@@ -31,8 +31,25 @@ const Model = ({ model, gridMode }) => {
                 z-index: 1; /* Ensure it appears above the image */
             }
 
-            .hoverer:hover .imagehover::after {
+            .hoverer:hover .imagehovergridMode::after {
                 top: 0; /* Move the gradient into view on hover */
+            }
+
+            .imagehover::after {
+            pointer-events: none;
+                content: '';
+                position: absolute;
+                top: 100%; /* Start from below the box */
+                left: 0;
+                right: 0;
+                height: 60%; /* Full height */
+                background: linear-gradient(to top, white, transparent);
+                transition: top 0.3s ease; /* Transition for smooth effect */
+                z-index: 1; /* Ensure it appears above the image */
+            }
+
+            .hoverer:hover .imagehover::after {
+                top: 60%; /* Move the gradient into view on hover */
             }
 
             .button-container {
@@ -59,11 +76,11 @@ const Model = ({ model, gridMode }) => {
             }
         `}</style>
             <div className=" hoverer rounded-lg transition-shadow duration-300 cursor-pointer">
-                <div className={`box imagehover relative overflow-hidden ${gridMode == 'Multi Grid' ? 'h-54' : 'h-[80vh]'} hover:shadow-lg w-full rounded-lg mb-2`}>
+                <div className={`box ${gridMode == 'Multi Grid' ? 'imagehovergridMode' : 'imagehover'} relative overflow-hidden ${gridMode == 'Multi Grid' ? 'h-[249px]' : 'h-[80vh]'} hover:shadow-lg w-full rounded-lg mb-2`}>
                     <img
                         onClick={() => handleDetailsClick(model)}
                         style={{ backgroundColor: '#F6F6F6' }}
-                        className="box relative z-0 h-[249px] w-full object-cover rounded-lg"
+                        className=" h-full w-full object-cover z-0"
                         src={model.image}
                         alt={model.name}
                     />

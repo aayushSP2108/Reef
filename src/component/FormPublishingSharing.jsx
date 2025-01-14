@@ -114,16 +114,20 @@ export default function FormPublishingSharing({
       newErrors.tags = 'At least one tag is required';
     }
 
+    if (formData.modelLink === 0) {
+      newErrors.tags = 'Open link is required';
+    }
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
   const handleNext = () => {
-    // if (validate()) {
-      // setSelectedTopic('Next Step');
-    // } else {
+    if (validate()) {
+      setSelectedTopic('Next Step');
+    } else {
       console.log(formData);
-    // }
+    }
   };
 
   return (
@@ -232,6 +236,21 @@ export default function FormPublishingSharing({
             className={`w-full p-3 border rounded-md focus:outline-none focus:shadow-md ${errors.citation ? 'border-red-500' : ''}`}
           />
           {errors.citation && <span className="text-red-500 text-sm">{errors.citation}</span>}
+        </div>
+
+        <div className="my-4">
+          <label htmlFor="title" className="block text-sm font-medium text-gray-700 mb-1">Model Link (must be a public URL to a .obj file):</label>
+          <input
+            type="url"
+            id="modelLink"
+            name="modelLink"
+            placeholder="https://example.com/model.obj"
+            value={formData.modelLink}
+            onChange={handleChange}
+            required
+            className={`w-full p-3 border rounded-md focus:outline-none focus:shadow-md ${errors.modelLink ? 'border-red-500' : ''}`} //  
+          />
+          {errors.title && <span className="text-red-500 text-sm">{errors.modelLink}</span>}
         </div>
 
         {/* Tags */}

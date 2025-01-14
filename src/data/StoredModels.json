@@ -1,7 +1,7 @@
 {
     "StoredModels": [
         {
-            "index": 0,
+            "index": 1,
             "image": "https://spicetreemunnar.com/wp-content/uploads/2022/09/The-Western-Ghats-A-UNESCO-World-Heritage-Site.jpg",
             "title": "Western Ghats Biodiversity",
             "year": 2023,
@@ -51,7 +51,7 @@
             }
         },
         {
-            "index": 1,
+            "index": 2,
             "image": "https://sustainability.stanford.edu/sites/sustainability/files/styles/card_1900x950/public/media/image/tibetuplift_himalayas_raimond-klavins-l6jxljmeuoo-unsplash_0.jpeg?h=56d0ca2e&itok=9Ej2p45Q",
             "title": "Himalayan Glacial Landscape",
             "year": 2023,
@@ -91,7 +91,7 @@
             }
         },
         {
-            "index": 2,
+            "index": 3,
             "image": "https://bhagyashritravels.com/wp-content/uploads/2019/10/White-Rann-of-Kutch-Feature.jpg",
             "title": "Great Rann of Kutch",
             "year": 2023,
@@ -135,7 +135,7 @@
             }
         },
         {
-            "index": 3,
+            "index": 4,
             "image": "https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2020/10/ganges_delta/22274206-2-eng-GB/Ganges_Delta_pillars.jpg",
             "title": "Ganga River Delta",
             "year": 2023,
@@ -174,7 +174,7 @@
             }
         },
         {
-            "index": 4,
+            "index": 5,
             "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Thar_desert_Rajasthan_India.jpg/544px-Thar_desert_Rajasthan_India.jpg",
             "title": "Thar Desert Ecosystem",
             "year": 2023,
@@ -214,7 +214,7 @@
             }
         },
         {
-            "index": 5,
+            "index": 6,
             "image": "https://media-cdn.tripadvisor.com/media/photo-s/10/98/6e/62/mesmerising-mahabaleshwar.jpg",
             "title": "Sahyadri Mountain Range",
             "year": 2023,
@@ -252,7 +252,7 @@
             }
         },
         {
-            "index": 6,
+            "index": 7,
             "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Western-Ghats-Matheran.jpg/220px-Western-Ghats-Matheran.jpg",
             "title": "Deccan Plateau Geological Model",
             "year": 2023,
@@ -292,7 +292,7 @@
             }
         },
         {
-            "index": 7,
+            "index": 8,
             "image": "https://www.shutterstock.com/image-photo/tropical-reef-seascape-hard-corals-260nw-755481211.jpg",
             "title": "Andaman Islands Coral Reefs",
             "year": 2023,
@@ -322,7 +322,7 @@
             }
         },
         {
-            "index": 8,
+            "index": 9,
             "image": "https://www.kuoni.co.uk/alfredand/wp-content/uploads/2022/03/iStock-664947348-1024x685.jpg",
             "title": "Kumarakom Wetlands",
             "year": 2023,
@@ -352,7 +352,7 @@
             }
         },
         {
-            "index": 9,
+            "index": 10,
             "image": "https://greenverz.com/wp-content/uploads/2023/04/Greenverz_Eastern_ghats_001.jpg",
             "title": "Eastern Ghats Biodiversity",
             "year": 2023,
@@ -382,7 +382,7 @@
             }
         },
         {
-            "index": 10,
+            "index": 11,
             "image": "https://livelihoods.eu/wp-content/uploads/2014/02/Sundarbans-4.jpg",
             "title": "Sundarbans Mangrove",
             "year": 2023,

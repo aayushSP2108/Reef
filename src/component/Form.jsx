@@ -3,10 +3,12 @@ import FormModelInfo from './FormModelInfo';
 import FormGeoreference from './FormGeoreference';
 import Form3DModels from './Form3DModels';
 import FormPublishingSharing from './FormPublishingSharing';
+import ModelDetails from './ModelDetails';
 
 const Form = ({ toast, loading, handleSubmit, handleChange, handleContributorChange, handleAddContributor, handleRemoveContributor, formData, colors, setFormData }) => {
 
   const [selectedTopic, setSelectedTopic] = useState('Model Info');
+  const [selectedOptions, setSelectedOptions] = useState([]);
 
   return (
     <>
@@ -17,7 +19,7 @@ const Form = ({ toast, loading, handleSubmit, handleChange, handleContributorCha
           position: 'sticky', top: '70px', zIndex: 998, backgroundColor: colors.mainBackgroundColor,
         }}
       >
-        {['Model Info', 'Georeference', 'Publishing Sharing', '3D Model Files'].map((topic) => (
+        {['Model Info', 'Model Details', 'Georeference', 'Publishing Sharing', '3D Model Files'].map((topic) => (
           <div
             key={topic}
             className={`py-1 px-3 rounded-full cursor-pointer`}
@@ -49,9 +51,24 @@ const Form = ({ toast, loading, handleSubmit, handleChange, handleContributorCha
         />
       )}
 
+      {selectedTopic === 'Model Details' && (
+        <ModelDetails
+          toast={toast}
+          selectedOptions={selectedOptions}
+          setSelectedOptions={setSelectedOptions}
+          setSelectedTopic={setSelectedTopic}
+          loading={loading}
+          handleSubmit={handleSubmit}
+          handleChange={handleChange}
+          formData={formData}
+          colors={colors}
+          setFormData={setFormData}
+        />
+      )}
+
       {selectedTopic === 'Georeference' && (
         <FormGeoreference
-        toast={toast}
+          toast={toast}
           setSelectedTopic={setSelectedTopic}
           loading={loading}
           handleSubmit={handleSubmit}
@@ -64,7 +81,7 @@ const Form = ({ toast, loading, handleSubmit, handleChange, handleContributorCha
 
       {selectedTopic === 'Publishing Sharing' && (
         <FormPublishingSharing
-        toast={toast}
+          toast={toast}
           setSelectedTopic={setSelectedTopic}
           loading={loading}
           handleSubmit={handleSubmit}
@@ -80,7 +97,7 @@ const Form = ({ toast, loading, handleSubmit, handleChange, handleContributorCha
 
       {selectedTopic === '3D Model Files' && (
         <Form3DModels
-        toast={toast}
+          toast={toast}
           setSelectedTopic={setSelectedTopic}
           loading={loading}
           handleSubmit={handleSubmit}
