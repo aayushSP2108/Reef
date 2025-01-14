@@ -13,7 +13,7 @@ export default function Contribute() {
 
     const [formData, setFormData] = useState({
         longitude: '',
-        latitude: '',
+        // latitude: '',
         contactid: '',
         contactinfo: '',
         // index used automatically
@@ -91,7 +91,7 @@ export default function Contribute() {
             contactid: userData._id
         }));
 
-        console.log(formData)
+        console.log('conti', formData)
         // Perform validation here
         if (!formData.contributors.length) {
             toast.error("Please add at least one contributor");

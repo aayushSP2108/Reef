@@ -135,6 +135,7 @@ app.post('/addmodel', async (req, res) => {
             modelLink,
             author, license, tags, size, smallestVisibleFeature, contributors, citation, visibility } = req.body;
 
+            console.log('req.body', req.body)
 
         // Ensure we structure the coordinates field correctly
         const coordinates = {

@@ -124,8 +124,8 @@ export default function FormPublishingSharing({
 
   const handleNext = () => {
     if (validate()) {
-      setSelectedTopic('Next Step');
-    } else {
+    //   setSelectedTopic('Next Step');
+    // } else {
       console.log(formData);
     }
   };
