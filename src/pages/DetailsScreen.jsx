@@ -118,7 +118,7 @@ export default function DetailsScreen() {
                         <div className=' mt-4 flex items-center gap-1'>
                             <h1 style={{ fontWeight: 500 }}>Component Tag</h1>
                             <LuDot color={colors.subTextColor} size={21} />
-                            {model?.info?.tags.map((element, index) => (
+                            {model?.info?.tags?.map((element, index) => (
                                 <div style={{ color: colors.subTextColor, fontSize: 12 }} id={index} className=' capitalize px-3 py-1 rounded-full border-[1px]'>
                                     <h1>{element}</h1>
                                 </div>
@@ -152,7 +152,7 @@ export default function DetailsScreen() {
                                 { label: 'Structure', value: model?.info?.structure?.join(', ') },
                                 { label: 'Fossils', value: model?.info?.fossils?.join(', ') },
                                 { label: 'Quaternary Geomorphology', value: model?.info?.quaternaryGeomorphology?.join(', ') }
-                            ].filter(({ value }) => value !== undefined && value !== null).map(({ label, value }) => (
+                            ].filter(({ value }) => value !== undefined && value !== null)?.map(({ label, value }) => (
                                 <div className='flex justify-between pb-2' key={label}>
                                     <span style={{ color: colors.subTextColor }} className='text-left'>{label}</span>
                                     <span className='text-right'>{value}</span>

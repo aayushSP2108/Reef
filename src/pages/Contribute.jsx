@@ -80,6 +80,24 @@ export default function Contribute() {
         setFormData({ ...formData, contributors: newContributors });
     };
 
+    function findMissingFields(data) {
+        const missingFields = [];
+
+        // Check if required fields are missing
+        if (!data.title) missingFields.push('Title');
+        if (!data.description) missingFields.push('Introduction');
+        if (!data.largeDescription) missingFields.push('Large Description');
+        if (!data.info || !data.info.size) missingFields.push('Model Size');
+        if (!data.info || !data.info.smallestVisibleFeature) missingFields.push('Model Smallest Visible Feature');
+        if(!formData.contributors.length) missingFields.push('Contributor');
+        if (!data.coordinates || !data.coordinates.longitude) missingFields.push('Longitude');
+        if (!data.coordinates || !data.coordinates.latitude) missingFields.push('Latitude');
+        if (!data.address) missingFields.push('Address');
+        if (!data.info || !data.info.state) missingFields.push('State');
+        
+        return missingFields;
+    }
+
     // Handle form submission
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -92,11 +110,21 @@ export default function Contribute() {
         }));
 
         console.log('conti', formData)
+       
         // Perform validation here
-        if (!formData.contributors.length) {
-            toast.error("Please add at least one contributor");
-            setLoading(false);
-            return;
+        const missing = findMissingFields(formData);
+        console.log("Missing fields:");
+
+        if (missing && missing.length > 0) {
+          toast.error(`Please add ${missing.map((field, index) => {
+            const fieldName = field.split('.').pop();
+
+            return index === missing.length - 1
+              ? `and ${field}`
+              : fieldName;
+          }).join(', ')}`);
+          setLoading(false);
+          return;
         }
 
         fetch(`${API_BASE_URL}:${MODELDATA_ENDPOINT}`, {

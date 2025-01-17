@@ -179,7 +179,7 @@ export default function Models() {
       });
       const data = await response.json();
       if (response.ok) {
-        // setAllModels(data.data); // Assuming response contains a 'data' field
+        setAllModels(data.data); // Assuming response contains a 'data' field
       } else {
         setError("Error fetching models: " + data.message);
       }
